@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "description": "Compiler-agnostic debug build",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "debug-gcc",
+      "displayName": "Debug (GCC/Clang)",
+      "description": "Debug settings for GCC-compatible compilers, incl. Clang",
+      "inherits": "debug",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-Wall -pedantic"
+      }
+    },
+    {
+      "name": "debug-msvc",
+      "displayName": "Debug (MSVC)",
+      "description": "Debug settings for MSVC",
+      "inherits": "debug",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "/W4"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "Address Sanitizer",
+      "description": "GCC/Clang-compatible Address+Leak Sanitizer build",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/asan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_CXX_FLAGS": "-Wall -fsanitize=address -fsanitize=leak"
+      }
+    },
+    {
+      "name": "tsan",
+      "displayName": "Thread Sanitizer",
+      "description": "GCC/Clang-compatible Thread Sanitizer build",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/tsan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_CXX_FLAGS": "-Wall -fsanitize=thread"
+      }
+    },
+    {
+      "name": "ubsan",
+      "displayName": "Undefined Behavior Sanitizer",
+      "description": "GCC/Clang-compatible Undefined Behavior Sanitizer build",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/ubsan",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_CXX_FLAGS": "-Wall -fsanitize=undefined"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "description": "Compiler-agnostic release build",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "release-gcc",
+      "displayName": "Release (GCC/Clang)",
+      "description": "Release settings for GCC-compatible compilers, incl. Clang",
+      "inherits": "release",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-Wall -pedantic"
+      }
+    },
+    {
+      "name": "release-msvc",
+      "displayName": "Release (MSVC)",
+      "description": "Release settings for MSVC",
+      "inherits": "release",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "/W4"
+      }
+    }
+  ]
+}
