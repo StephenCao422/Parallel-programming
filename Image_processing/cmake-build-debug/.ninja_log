@@ -1,0 +1,8 @@
+# ninja log v5
+685	724	1678438989610182356	Multiple_thread	f9dbd4f719a9d28e
+0	57	1678439014422256303	build.ninja	991c74b0564e4fa4
+4	685	1678438989568723673	CMakeFiles/Multiple_thread.dir/Sobel_Edge_Detection.cpp.o	d13390340d5015fb
+4	771	1678439015418799609	CMakeFiles/Multiple_thread.dir/Sobel_Edge_Detection.cpp.o	d13390340d5015fb
+771	809	1678439015460513667	Multiple_thread	f9dbd4f719a9d28e
+4	660	1678439041112613716	CMakeFiles/Multiple_thread.dir/Sobel_Edge_Detection.cpp.o	d13390340d5015fb
+660	701	1678439041156247478	Multiple_thread	f9dbd4f719a9d28e
